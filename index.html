@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Turno Pro — Documentos legais</title>
+    <meta name="description" content="Termos de uso (EULA) do app Turno Pro." />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0b1020;
+        --card: rgba(255, 255, 255, 0.06);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.7);
+        --border: rgba(255, 255, 255, 0.12);
+        --link: #8ab4ff;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f6f7fb;
+          --card: rgba(0, 0, 0, 0.03);
+          --text: rgba(0, 0, 0, 0.88);
+          --muted: rgba(0, 0, 0, 0.62);
+          --border: rgba(0, 0, 0, 0.08);
+          --link: #1a73e8;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 600px at 20% 0%, rgba(138, 180, 255, 0.25), transparent),
+          radial-gradient(1000px 600px at 80% 30%, rgba(34, 197, 94, 0.18), transparent),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 56px 20px;
+      }
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+      h1 {
+        font-size: 28px;
+        margin: 0;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .card {
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: 14px;
+        padding: 18px;
+      }
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Turno Pro — Documentos legais</h1>
+        <p>Links públicos para os termos de uso do aplicativo.</p>
+      </header>
+
+      <main class="card" aria-label="Links de documentos legais">
+        <strong>Termos de uso (EULA)</strong>
+        <ul>
+          <li><a href="./termos-de-uso.html" hreflang="pt-BR">Português (Brasil)</a></li>
+          <li><a href="./terms-of-use.html" hreflang="en">English</a></li>
+        </ul>
+      </main>
+
+      <footer>
+        Suporte: <a href="mailto:turnobrapp@gmail.com">turnobrapp@gmail.com</a>
+      </footer>
+    </div>
+  </body>
+</html>
