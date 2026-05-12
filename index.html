@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Turno Pro - Documentos legais</title>
+    <title>Turno Pro — Documentos Legais</title>
     <meta
       name="description"
       content="Termos de uso e política de privacidade do app Turno Pro."
@@ -17,8 +17,8 @@
         --muted: rgba(255, 255, 255, 0.7);
         --border: rgba(255, 255, 255, 0.12);
         --link: #8ab4ff;
+        --linkedin: #0a66c2;
       }
-
       @media (prefers-color-scheme: light) {
         :root {
           --bg: #f6f7fb;
@@ -29,116 +29,405 @@
           --link: #1a73e8;
         }
       }
-
       * {
         box-sizing: border-box;
       }
-
       body {
         margin: 0;
         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
           Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        background:
-          radial-gradient(
-            1200px 600px at 20% 0%,
-            rgba(138, 180, 255, 0.25),
-            transparent
-          ),
-          radial-gradient(
-            1000px 600px at 80% 30%,
-            rgba(34, 197, 94, 0.18),
-            transparent
-          ),
+        background: radial-gradient(1200px 600px at 20% 0%, rgba(138, 180, 255, 0.25), transparent),
+          radial-gradient(1000px 600px at 80% 30%, rgba(34, 197, 94, 0.18), transparent),
           var(--bg);
         color: var(--text);
         line-height: 1.5;
       }
-
       .container {
         max-width: 900px;
         margin: 0 auto;
-        padding: 56px 20px;
+        padding: 40px 20px 56px;
       }
-
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+        margin-bottom: 28px;
+      }
+      .brand-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .app-name {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--text);
+        line-height: 1.15;
+      }
+      .app-logo {
+        width: 96px;
+        height: 96px;
+        border-radius: 22%;
+        border: 1px solid var(--border);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+      }
+      .lang-switch {
+        display: inline-flex;
+        padding: 3px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        gap: 2px;
+      }
+      .lang-switch button {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 8px;
+        color: var(--muted);
+        background: transparent;
+      }
+      .lang-switch button[aria-pressed="true"] {
+        background: rgba(138, 180, 255, 0.22);
+        color: var(--text);
+      }
+      @media (prefers-color-scheme: light) {
+        .lang-switch button[aria-pressed="true"] {
+          background: rgba(26, 115, 232, 0.14);
+        }
+      }
+      .lang-switch button:focus-visible {
+        outline: 2px solid var(--link);
+        outline-offset: 2px;
+      }
       header {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin-bottom: 22px;
+        margin-bottom: 8px;
       }
-
       h1 {
-        font-size: 28px;
+        font-size: clamp(1.35rem, 4vw, 1.75rem);
         margin: 0;
         letter-spacing: -0.02em;
+        line-height: 1.2;
       }
-
-      p {
+      .intro {
         margin: 0;
         color: var(--muted);
+        max-width: 36rem;
       }
-
-      .grid {
-        display: grid;
-        gap: 14px;
-      }
-
       .card {
         border: 1px solid var(--border);
         background: var(--card);
         border-radius: 14px;
         padding: 18px;
       }
-
-      ul {
-        margin: 12px 0 0;
-        padding-left: 18px;
+      .doc-section + .doc-section {
+        margin-top: 22px;
       }
-
+      .doc-section h2 {
+        margin: 0 0 10px;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .doc-links {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .doc-links a.primary {
+        font-weight: 600;
+      }
+      .doc-links .alt {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .doc-links .alt a {
+        color: var(--link);
+      }
       a {
         color: var(--link);
         text-decoration: none;
       }
-
       a:hover {
         text-decoration: underline;
       }
-
-      footer {
-        margin-top: 18px;
+      .site-footer {
+        margin-top: 24px;
         color: var(--muted);
         font-size: 13px;
+        text-align: center;
+      }
+      .developer {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .developer-name {
+        margin: 0;
+        font-weight: 600;
+        color: var(--text);
+        font-size: 15px;
+      }
+      .linkedin-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--linkedin);
+        font-weight: 600;
+      }
+      .linkedin-link svg {
+        flex-shrink: 0;
+      }
+      .linkedin-link:hover {
+        color: var(--linkedin);
+        filter: brightness(1.15);
       }
     </style>
   </head>
   <body>
     <div class="container">
+      <div class="hero">
+        <div class="brand-block">
+          <img
+            class="app-logo"
+            src="./logo.png"
+            alt="Turno Pro"
+            width="96"
+            height="96"
+            decoding="async"
+          />
+          <p class="app-name">Turno Pro</p>
+        </div>
+        <div
+          class="lang-switch"
+          role="group"
+          aria-label="Idioma / Language"
+          id="lang-switch"
+        >
+          <button type="button" id="lang-pt" aria-pressed="true">Português</button>
+          <button type="button" id="lang-en" aria-pressed="false">English</button>
+        </div>
+      </div>
+
       <header>
-        <h1>Turno Pro - Documentos legais</h1>
-        <p>Links públicos para os termos de uso e a política de privacidade do aplicativo.</p>
+        <h1 id="page-title">Documentos Legais</h1>
+        <p class="intro" id="page-intro">
+          Links públicos para termos de uso e política de privacidade do aplicativo.
+        </p>
       </header>
 
-      <main class="grid" aria-label="Links de documentos legais">
-        <section class="card">
-          <strong>Termos de uso (EULA)</strong>
-          <ul>
-            <li><a href="./termos-de-uso.html" hreflang="pt-BR">Português (Brasil)</a></li>
-            <li><a href="./terms-of-use.html" hreflang="en">English</a></li>
+      <main class="card" id="legal-main" aria-label="Documentos legais">
+        <div class="doc-section">
+          <h2 id="heading-terms">Termos de uso (EULA)</h2>
+          <ul class="doc-links">
+            <li>
+              <a class="primary" id="link-terms-primary" href="./termos-de-uso.html">Abrir termos de uso</a>
+            </li>
+            <li class="alt">
+              <a id="link-terms-alt" href="./terms-of-use.html">Ver em inglês</a>
+            </li>
           </ul>
-        </section>
-
-        <section class="card">
-          <strong>Política de privacidade</strong>
-          <ul>
-            <li><a href="./politica-de-privacidade.html" hreflang="pt-BR">Português (Brasil)</a></li>
-            <li><a href="./privacy-policy.html" hreflang="en">English</a></li>
+        </div>
+        <div class="doc-section">
+          <h2 id="heading-privacy">Política de privacidade</h2>
+          <ul class="doc-links">
+            <li>
+              <a class="primary" id="link-privacy-primary" href="./politica-de-privacidade.html"
+                >Abrir política de privacidade</a
+              >
+            </li>
+            <li class="alt">
+              <a id="link-privacy-alt" href="./privacy-policy.html">Ver em inglês</a>
+            </li>
           </ul>
-        </section>
+        </div>
       </main>
 
-      <footer>
-        Suporte: <a href="mailto:suporte@turnoproapp.com">suporte@turnoproapp.com</a>
+      <footer class="site-footer">
+        <p style="margin: 0 0 12px">
+          <span id="support-label">Suporte:</span>
+          <a id="support-email" href="mailto:suporte@turnoproapp.com">suporte@turnoproapp.com</a>
+        </p>
+        <div class="developer">
+          <p class="developer-label" id="developer-label" style="margin: 0; font-size: 13px">
+            Desenvolvedor
+          </p>
+          <p class="developer-name">Marcelo Ragnelli Frigério</p>
+          <a
+            class="linkedin-link"
+            id="linkedin-link"
+            href="https://www.linkedin.com/in/marceloragnelli"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+            <span id="linkedin-text">LinkedIn</span>
+          </a>
+        </div>
       </footer>
     </div>
+
+    <script>
+      (function () {
+        var STORAGE_KEY = "turnopro-legal-lang";
+        var STR = {
+          pt: {
+            htmlLang: "pt-BR",
+            title: "Turno Pro — Documentos Legais",
+            metaDesc:
+              "Termos de uso e política de privacidade do app Turno Pro.",
+            mainAria: "Documentos Legais",
+            langGroupAria: "Idioma / Language",
+            pageHeading: "Documentos Legais",
+            intro:
+              "Links públicos para termos de uso e política de privacidade do aplicativo.",
+            headingTerms: "Termos de uso (EULA)",
+            headingPrivacy: "Política de privacidade",
+            termsPrimary: "Abrir termos de uso",
+            termsAlt: "Ver em inglês",
+            privacyPrimary: "Abrir política de privacidade",
+            privacyAlt: "Ver em inglês",
+            supportLabel: "Suporte:",
+            supportEmail: "suporte@turnoproapp.com",
+            developerLabel: "Desenvolvedor",
+            linkedinText: "LinkedIn",
+            termsPrimaryHref: "./termos-de-uso.html",
+            termsAltHref: "./terms-of-use.html",
+            privacyPrimaryHref: "./politica-de-privacidade.html",
+            privacyAltHref: "./privacy-policy.html",
+          },
+          en: {
+            htmlLang: "en",
+            title: "Turno Pro — Legal Documents",
+            metaDesc: "Terms of Use and Privacy Policy for the Turno Pro app.",
+            mainAria: "Legal Documents",
+            langGroupAria: "Language / Idioma",
+            pageHeading: "Legal Documents",
+            intro: "Public links to the app’s Terms of Use and Privacy Policy.",
+            headingTerms: "Terms of Use (EULA)",
+            headingPrivacy: "Privacy Policy",
+            termsPrimary: "Open Terms of Use",
+            termsAlt: "View in Portuguese",
+            privacyPrimary: "Open Privacy Policy",
+            privacyAlt: "View in Portuguese",
+            supportLabel: "Support:",
+            supportEmail: "support@turnoproapp.com",
+            developerLabel: "Developer",
+            linkedinText: "LinkedIn",
+            termsPrimaryHref: "./terms-of-use.html",
+            termsAltHref: "./termos-de-uso.html",
+            privacyPrimaryHref: "./privacy-policy.html",
+            privacyAltHref: "./politica-de-privacidade.html",
+          },
+        };
+
+        function getStoredLang() {
+          try {
+            var v = localStorage.getItem(STORAGE_KEY);
+            if (v === "pt" || v === "en") return v;
+          } catch (e) {}
+          return null;
+        }
+
+        function setStoredLang(lang) {
+          try {
+            localStorage.setItem(STORAGE_KEY, lang);
+          } catch (e) {}
+        }
+
+        function applyLang(lang) {
+          var t = STR[lang];
+          document.documentElement.lang = t.htmlLang;
+          document.title = t.title;
+          var meta = document.querySelector('meta[name="description"]');
+          if (meta) meta.setAttribute("content", t.metaDesc);
+          var main = document.getElementById("legal-main");
+          if (main) main.setAttribute("aria-label", t.mainAria);
+          var lg = document.getElementById("lang-switch");
+          if (lg) lg.setAttribute("aria-label", t.langGroupAria);
+
+          document.getElementById("page-title").textContent = t.pageHeading;
+          document.getElementById("page-intro").textContent = t.intro;
+          document.getElementById("heading-terms").textContent = t.headingTerms;
+          document.getElementById("heading-privacy").textContent = t.headingPrivacy;
+
+          var a1 = document.getElementById("link-terms-primary");
+          a1.href = t.termsPrimaryHref;
+          a1.textContent = t.termsPrimary;
+          var a2 = document.getElementById("link-terms-alt");
+          a2.href = t.termsAltHref;
+          a2.textContent = t.termsAlt;
+
+          var b1 = document.getElementById("link-privacy-primary");
+          b1.href = t.privacyPrimaryHref;
+          b1.textContent = t.privacyPrimary;
+          var b2 = document.getElementById("link-privacy-alt");
+          b2.href = t.privacyAltHref;
+          b2.textContent = t.privacyAlt;
+
+          document.getElementById("support-label").textContent = t.supportLabel;
+          var supportEmail = document.getElementById("support-email");
+          supportEmail.href = "mailto:" + t.supportEmail;
+          supportEmail.textContent = t.supportEmail;
+          document.getElementById("developer-label").textContent = t.developerLabel;
+          document.getElementById("linkedin-text").textContent = t.linkedinText;
+
+          document.getElementById("lang-pt").setAttribute("aria-pressed", lang === "pt" ? "true" : "false");
+          document.getElementById("lang-en").setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+
+          var li = document.getElementById("linkedin-link");
+          if (li) {
+            var enProfile = "Marcelo Ragnelli Frigério — LinkedIn profile";
+            var ptProfile = "Perfil no LinkedIn de Marcelo Ragnelli Frigério";
+            li.setAttribute("aria-label", lang === "en" ? enProfile : ptProfile);
+          }
+        }
+
+        var initial = getStoredLang() || "pt";
+        applyLang(initial);
+
+        document.getElementById("lang-pt").addEventListener("click", function () {
+          setStoredLang("pt");
+          applyLang("pt");
+        });
+        document.getElementById("lang-en").addEventListener("click", function () {
+          setStoredLang("en");
+          applyLang("en");
+        });
+      })();
+    </script>
   </body>
 </html>
